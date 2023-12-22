@@ -2,7 +2,7 @@ console.log("ola")
 
 const quizdata = [
     {
-        question: 'What is thne capital of Nigeria?',
+        question: 'What is the capital of Nigeria?',
         options: ['Abuja','Kano','Enugu','Lagos'],
         answer:'Abuja',
     },
@@ -32,12 +32,12 @@ const quizdata = [
         answer:'Au'
     },
     {
-        question:'Who was the first civilian president in Nigeria',
+        question:'Who was the first civilian president in Nigeria?',
         options:['Tafawa Balewa','Nnamdi Azikwe','Olusegun Obasanjo','Obafemi Awolowo'],
         answer:'Olusegun Obasanjo'
     },
     {
-        question:'What country has the name of its continent?',
+        question:'What country has the name of a continent?',
         options:['America','Europe','Africa','Australia'],
         answer:'Australia'
     },
@@ -57,7 +57,7 @@ const quizcont = document.getElementById("quiz");
 const resultcont = document.getElementById("result");
 const submitbtn = document.getElementById("submit");
 const retrybtn = document.getElementById("retry");
-const showans = dosument.getElementById("showans");
+const showans = document.getElementById("showans");
 
 let currentQuestion = 0;
 let score = 0;
@@ -130,7 +130,7 @@ function displayResult() {
   submitbtn.style.display = 'none';
   retrybtn.style.display = 'inline-block';
   showans.style.display = 'inline-block';
-  resultcont.innerHTML = 'You scored ${score} out of ${quizdata.length}!';
+  resultcont.innerHTML = `You scored ${score} out of ${quizdata.length}!`;
 }
 
 function retryQuiz() {
@@ -156,14 +156,14 @@ function showAnswer() {
     incorrectAnswersHtml += `
       <p>
         <strong>Question:</strong> ${incorrectAnswers[i].question}<br>
-        <strong>Your Answer:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
-        <strong>Correct Answer:</strong> ${incorrectAnswers[i].correctAnswer}
+        <strong>Your Answer is:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+        <strong>Correct Answer is:</strong> ${incorrectAnswers[i].correctAnswer}
       </p>
     `;
   }
 
   resultcont.innerHTML = `
-    <p>You scored ${score} out of ${quizData.length}!</p>
+    <p>You scored ${score} out of ${quizdata.length}!</p>
     <p>Incorrect Answers:</p>
     ${incorrectAnswersHtml}
     `;
