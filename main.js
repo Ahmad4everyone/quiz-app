@@ -1,5 +1,16 @@
-console.log("ola")
+document.getElementById("btn").addEventListener('click', function(){
+  let inp = document.getElementById("inp").value
+  if(inp === ''){
+    alert('pls input your name');
+    return;
+    
+  }
+  let user = document.getElementById("ahmad")
+  let ola = document.getElementById("container")
+  user.innerHTML = ola
+    ola.style.display = 'block', user.style.display = 'none';
 
+  })
 const quizdata = [
     {
         question: 'What is the capital of Nigeria?',
@@ -52,7 +63,9 @@ const quizdata = [
         answer:"Brazil,Russia,India,China,South-Africa"
     },
 ];
-
+const inpDisplay = document.getElementById("inp")
+const quizdsp = document.getElementById("ahmad");
+const quizDsp = document.getElementById("container")
 const quizcont = document.getElementById("quiz");
 const resultcont = document.getElementById("result");
 const submitbtn = document.getElementById("submit");
@@ -68,13 +81,15 @@ function shuffleArray(array) {
         const j = math.floor(math.random() * (i + 1));
         [array[i], array [j]] = [array[j], array[i]];
     }
+    
 }
 
 function displayQuestion(){
+  
     const questionData = quizdata[currentQuestion]
     const questionElement = document.createElement('div');
-  questionElement.className = 'question';
-  questionElement.innerHTML = questionData.question;
+    questionElement.className = 'question';
+    questionElement.innerHTML = questionData.question;
 
   const optionsElement = document.createElement('div');
   optionsElement.className = 'options';
@@ -126,11 +141,12 @@ function checkAnswer() {
 }
 
 function displayResult() {
+ 
   quizcont.style.display = 'none';
   submitbtn.style.display = 'none';
   retrybtn.style.display = 'inline-block';
   showans.style.display = 'inline-block';
-  resultcont.innerHTML = `You scored ${score} out of ${quizdata.length}!`;
+  resultcont.innerHTML = ` You scored ${score} out of ${quizdata.length}!`;
 }
 
 function retryQuiz() {
@@ -156,8 +172,8 @@ function showAnswer() {
     incorrectAnswersHtml += `
       <p>
         <strong>Question:</strong> ${incorrectAnswers[i].question}<br>
-        <strong>Your Answer is:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
-        <strong>Correct Answer is:</strong> ${incorrectAnswers[i].correctAnswer}
+        <strong>Your Answer:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+        <strong>Correct Answer:</strong> ${incorrectAnswers[i].correctAnswer}
       </p>
     `;
   }
