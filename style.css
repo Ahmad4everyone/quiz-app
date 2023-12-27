@@ -12,9 +12,9 @@ body{
 .ahmad {
    border: 1px solid black;
    width: 450px;
-   height: 250px;
+   height: 200px;
    margin-top: 80px;
-   background-color: darkkhaki;
+   background-color: firebrick;
    border-radius: 12px;
     border: none;
     
@@ -31,25 +31,27 @@ body{
     margin-top: 20px;
     text-align: center;
     border: none;
+    font-weight: bolder;
 
 }
 .container{
     width: 450px;
     padding: 20px;
     margin-top: 80px;
-    background-color: white;
+    background-color: firebrick;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     display: none;
 }
 h1{
     text-align: center;
-    color: black;
+    color: whitesmoke;
 }
 .question{
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: white;
     
 }
 .options{
@@ -59,6 +61,7 @@ h1{
 .option{
     display: block;
     margin-bottom: 10px;
+    color: wheat;
 }
 .btn{
     display: inline-block;
